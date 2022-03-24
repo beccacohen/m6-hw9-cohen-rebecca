@@ -5,11 +5,14 @@ var weather = document.getElementById('weather')
 form.onsubmit = function(e) {
   e.preventDefault();
 
+  while (weather.firstChild)
+  weather.firstChild.remove()
+
   var userInput = input.value.trim()
   if (!userInput) return
   getWeather(userInput)
     .then(displayWeatherInfo)
-    // .catch(displayLocNotFound)
+    .catch(displayLocNotFound)
 
   input.value = ""
 }
@@ -24,17 +27,9 @@ function getWeather(query) {
   .then(function(res) {
     return res.json()
   })
-}
 
-//   .then(function(data){
-//     if (data.cod === "404") throw new Error ('location not found')
-//     var iconUrl =  'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
-//
-//     var description = data.weather[0].description
-// })
-// }
+  .then(function(data){
 
-function displayWeatherInfo(data) {
     var div = document.createElement('div')
     var h2 = document.createElement('h2')
 
@@ -57,17 +52,10 @@ function displayWeatherInfo(data) {
     temp.textContent = 'Current Temperature:' + " " + data.main.temp + "°F"
     div.appendChild(temp) // Current Temperature
 
-
-
     var ftemp = document.createElement('p')
     ftemp.textContent = 'Feels Like:' + " " + data.main.feels_like + "°F"
     div.appendChild(ftemp) // Current "feels like" Temperature
 
-
     weather.appendChild(div)
-  }
-
-// .catch(function(err){
-//
-// })
-// }
+  })
+}
