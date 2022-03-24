@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: rgb(6,0,106);
+  background: linear-gradient(90deg, rgba(6,0,106,1) 0%, rgba(9,9,121,1) 28%, rgba(0,126,205,1) 62%, rgba(0,212,255,1) 90%);
+  background-repeat: none;
+}
+
+h1 {
+  color: White;
+  font-size: 10rem;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+form {
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+input {
+  padding: .2rem;
+  font-size: 2rem;
+}
+
+button {
+  padding: .2rem 1rem;
+  border-radius: .2rem;
+  background-color: white;
+  color: black;
+  font-size: 2rem;
+}
+
+#weather {
+  text-align: center;
+  color: white;
+}
+
+h2 {
+font-size: 5rem;
+}
+
+/*===========================
+
+Responsive Web Coding - 1024px by 768px (Laptop)
+
+===========================*/
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 6rem;
+  }
+  input {
+    font-size: .6rem;
+  }
+
+  button {
+    font-size: .6rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
